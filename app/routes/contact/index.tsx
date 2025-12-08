@@ -1,7 +1,7 @@
 const ContactPage = () => {
-    return (<section>
-        <h2 className="text-3xl font-bold mb-8 text-center">Contact Me📮</h2>
-    </section>  );
+    return (
+        <h2 className="text-3xl font-bold mb-8">Contact Me📮</h2>
+  );
 }
  
 export default ContactPage;
