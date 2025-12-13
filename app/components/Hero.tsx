@@ -1,5 +1,10 @@
 import { Link } from "react-router";
 
+type HeroProps = {
+  name?: string;
+  text?: string;
+};
+
 const Hero = ({
     name = '[NAME]', 
     text= 'I build friendly web experienes and help others become confident, modern developers!'}) => {
