@@ -19,9 +19,12 @@ export async function loader({
 }
 
 const HomePage = ({ loaderData }: Route.ComponentProps) => {
+
+  const {projects } = loaderData;
+
   return (
     <>
-      <FeaturedProjects project={project} count={2} />
+      <FeaturedProjects projects={projects} count={2} />
     </>
   );
 };
