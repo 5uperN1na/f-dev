@@ -1,8 +1,11 @@
 import type { Route } from "./+types/index";
-import type {PostMeta} from '~/types';
-import { Link } from "react-router";
+import type { PostMeta } from "~/types";
+import PostCard from '~/components/PostCard';
+ 
 
-export async function loader({ request }: Route.LoaderArgs): Promise<{posts: PostMeta[]}> {
+export async function loader({
+  request,
+}: Route.LoaderArgs): Promise<{ posts: PostMeta[] }> {
   const url = new URL("/posts-meta.json", request.url);
   const res = await fetch(url.href);
 
@@ -15,8 +18,16 @@ export async function loader({ request }: Route.LoaderArgs): Promise<{posts: Pos
 
 const BlogPage = ({ loaderData }: Route.ComponentProps) => {
   const { posts } = loaderData;
-  console.log("posts:" + posts);
-  return <h2 className="text-3xl font-bold mb-8">📝 Blog</h2>;
+
+  return (
+    <div className="max-w-3xl">
+      <h2 className="text-3xl font-bold mb-8">📝 Blog</h2>
+      {posts.map((post) => (
+        <PostCard key={post.slug} post = {post} />
+   
+      ))}
+    </div>
+  );
 };
 
 export default BlogPage;
