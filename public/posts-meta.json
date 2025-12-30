@@ -33,5 +33,13 @@
     "title": "Deploying Full-Stack Apps: A Simple Guide",
     "excerpt": "Everything you need to know to deploy your frontend and backend together.",
     "date": "2025-01-28T00:00:00"
+  },
+
+   {
+    "id": "6",
+    "slug": "test-post",
+    "title": "Test Future Blogs Here",
+    "excerpt": "This is where I will put future blogs.",
+    "date": "2025-12-28T00:00:00"
   }
 ]
