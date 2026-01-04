@@ -8,14 +8,22 @@ type LatestPostProps = {
 }
  
  const LatestPost = ({posts, limit = 3}: LatestPostProps) => {
+
+    const sorted = [...posts].sort((a: PostMeta, b: PostMeta) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+
+    const lastest = sorted.slice(0, limit);
+
+
     return (
         <section className="max-w-6xl mx-auto px-6 py-12">
             <h2 className="text-2xl font-bold mb-6 text-gray-600">
                 🗐 Latest Posts
             </h2>
 
-            <div className="grdi-gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post)=> (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {lastest.map((post)=> (
                     <Link
                     key={post.slug}
                     to={`/blog/${post.slug}`}
