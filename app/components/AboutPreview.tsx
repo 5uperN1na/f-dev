@@ -10,7 +10,7 @@ const AboutPreview = () => {
       bg-gray-900
     >
       <img
-        src="/images/profile.jpg"
+        src="/images/pds.jpg"
         alt="profile"
         className="w-32 h-32 rounded-full object-cover border-4 border-blue-500 shadow-md"
       />
