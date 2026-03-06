@@ -33,8 +33,8 @@ export async function loader({
   ]);
 
  // console.log(projects, posts)
-  return { projects, posts };
-  //return { projects: projects.data, posts };
+ // return { projects, posts };
+  return { projects: projects.data, posts };
 
 }
 
